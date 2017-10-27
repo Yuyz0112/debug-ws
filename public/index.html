@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Web Socket</title>
+</head>
+<body>
+  Web Socket
+</body>
+<script>
+  var socketInstance = new WebSocket('ws://' + window.location.host + '/ws');
+  socketInstance.onopen = function () {
+    console.log('open');
+  }
+  socketInstance.onmessage = function (message) {
+    console.log(message);
+  }
+  socketInstance.onclose = function () {
+    console.log('close');
+  };
+</script>
+</html>
